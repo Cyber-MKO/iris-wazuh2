@@ -131,7 +131,8 @@ services:
       file: docker-compose.base.yml
       service: nginx
     image: ${NGINX_IMAGE_NAME:-ghcr.io/dfir-iris/iriswebapp_nginx}:${NGINX_IMAGE_TAG:-v2.4.20}
-
+    networks:
+      - shared_net
 volumes:
   wazuh_api_configuration:
   wazuh_etc:
